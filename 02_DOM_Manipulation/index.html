@@ -11,14 +11,15 @@
 <body>
 
 <h1>Institute of Software Engineering</h1> <!--Hello Java Script : Font-Size: 50px-->
-<h1>Institute of Software Engineering</h1> <!--Hello Java Script : Font-Size: 50px-->
+<h1>Institute of Software Engineering</h1>
 
 <h2 id="secondTitle">GDSE</h2> <!--IJSE-->
 
-<h3>Panadura & Galle</h3> <!--Color RED-->
+<h3 class="h3Class">Panadura & Galle</h3> <!--Color RED-->
 
 <!--Background Color Red, Font COLOR , WHITE-->
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores eos omnis vel. Accusamus assumenda distinctio
+<p id="para">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores eos omnis vel. Accusamus assumenda
+    distinctio
     dolorum eos et illo itaque iusto molestiae nobis nulla, porro possimus quidem saepe voluptates voluptatum!</p>
 <hr>
 
@@ -39,12 +40,28 @@
 
 
 <script>
-    /*select by element id*/
+    /*select by element id- selects a html collection*/
     document.getElementsByTagName("h1")[0].innerText = "Hello Java Script";
-    document.getElementsByTagName("h1")[0].style.fontSize="50px";
+    document.getElementsByTagName("h1")[0].style.fontSize = "50px";
 
-    /*select by id*/
-    document.getElementById("secondTitle").innerText="IJSE";
+    /*select by id - select only one element*/
+    document.getElementById("secondTitle").innerText = "IJSE";
+
+    /*select by class - select a html collection */
+    document.getElementsByClassName("h3Class")[0].style.color = 'red';
+
+
+    document.getElementById("para").style.backgroundColor = 'red';
+    document.getElementById("para").style.color = 'white';
+
+
+    /* Query Selector - select the first matching element of the dom*/
+    document.querySelector("input").value = "C001";
+
+
+    /* Query Selector Aall - select all matching elements of the dom- node list*/
+    document.querySelectorAll("h1")[1].style.color = 'green';
+
 
 </script>
 
