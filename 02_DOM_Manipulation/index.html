@@ -26,7 +26,7 @@
 <!--C001-->
 <input placeholder="Input Something" type="text">
 
-<button>Test</button>
+<button id="btn1">Test</button>
 <hr>
 
 <ul>
@@ -61,6 +61,12 @@
 
     /* Query Selector Aall - select all matching elements of the dom- node list*/
     document.querySelectorAll("h1")[1].style.color = 'green';
+
+
+    /*    select button */
+    document.getElementById("btn1").addEventListener("click", function () {
+        alert("hello");
+    });
 
 
 </script>
