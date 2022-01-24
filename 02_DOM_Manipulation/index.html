@@ -29,6 +29,7 @@
 <button id="btn1">Test 1</button>
 <button id="btn2">Test 2</button>
 <button id="btn3">Test 3</button>
+<button id="btn4">Test 4</button>
 <hr>
 
 <ul>
@@ -95,7 +96,7 @@
     document.getElementById("image").getAttribute("id")
 
     /*how to change attribute value*/
-    // document.getElementById("image").setAttribute("src","https://ijse.lk/images/logos/ijse.png");
+    document.getElementById("image").setAttribute("src","https://ijse.lk/images/logos/ijse.png");
 
 
 
@@ -103,6 +104,22 @@
     document.getElementById("btn3").addEventListener("click",function (){
         document.getElementById("image").setAttribute("src",document.getElementById("txtInput").value);
     });
+
+
+    /*get html content and update*/
+    document.querySelector('ul').innerHTML="<li>CMJD</li>";
+    document.querySelector('ul').innerHTML="<li>GDSE</li>";
+
+    /*get the already added content and update*/
+    document.querySelector('ul').innerHTML+="<li>ABSD</li>";
+
+
+    document.getElementById("btn4").addEventListener("click",function (){
+        /*input field value*/
+        document.querySelector('ul').innerHTML+="<li>"+document.getElementById("txtInput").value+"</li>";
+    });
+
+
 
 </script>
 
