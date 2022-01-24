@@ -26,7 +26,8 @@
 <!--C001-->
 <input placeholder="Input Something" type="text">
 
-<button id="btn1">Test</button>
+<button id="btn1">Test 1</button>
+<button id="btn2">Test 2</button>
 <hr>
 
 <ul>
@@ -65,8 +66,13 @@
 
     /*    select button */
     document.getElementById("btn1").addEventListener("click", function () {
-        alert("hello");
+      /*  alert("hello");*/
+        document.getElementsByTagName("h1")[1].remove();
     });
+
+
+
+
 
 
 </script>
