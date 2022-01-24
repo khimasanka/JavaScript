@@ -37,7 +37,7 @@
 </ul>
 
 <!--Set image-->
-<img alt="" src="" width="300px">
+<img id="image" alt="" src="" width="300px">
 
 
 <script>
@@ -82,6 +82,19 @@
         document.getElementById("txtInput").value = "";
     });
 
+
+
+    /*How to select attributes name set their values*/
+    /*How to view all attributes names of a element*/
+    document.getElementById("image").getAttributeNames();
+
+    /*how to get a one attribute value*/
+    document.getElementById("image").getAttribute("src")
+    document.getElementById("image").getAttribute("width")
+    document.getElementById("image").getAttribute("id")
+
+    /*how to chanage attribute value*/
+    document.getElementById("image").setAttribute("src","https://ijse.lk/images/logos/ijse.png");
 
 </script>
 
