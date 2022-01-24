@@ -74,11 +74,12 @@
     /*   select the button*/
     /*   add click event*/
     /*   Select the input field & collect type info */
-    /* select h1 which we want to display the input text */
+    /*   select h1 which we want to display the input text */
+    /*   set the display value from typed value */
     document.getElementById("btn2").addEventListener("click", function () {
         /*    alert("Working");*/
         document.getElementById("display").innerText = document.getElementById("txtInput").value;
-
+        document.getElementById("txtInput").value = "";
     });
 
 
