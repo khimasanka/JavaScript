@@ -28,6 +28,7 @@
 
 <button id="btn1">Test 1</button>
 <button id="btn2">Test 2</button>
+<button id="btn3">Test 3</button>
 <hr>
 
 <ul>
@@ -93,8 +94,15 @@
     document.getElementById("image").getAttribute("width")
     document.getElementById("image").getAttribute("id")
 
-    /*how to chanage attribute value*/
-    document.getElementById("image").setAttribute("src","https://ijse.lk/images/logos/ijse.png");
+    /*how to change attribute value*/
+    // document.getElementById("image").setAttribute("src","https://ijse.lk/images/logos/ijse.png");
+
+
+
+
+    document.getElementById("btn3").addEventListener("click",function (){
+        document.getElementById("image").setAttribute("src",document.getElementById("txtInput").value);
+    });
 
 </script>
 
