@@ -10,9 +10,10 @@
 </head>
 <body>
 
-<h1>Institute of Software Engineering</h1> <!--Hello Java Script : Font-Size: 30px-->
+<h1>Institute of Software Engineering</h1> <!--Hello Java Script : Font-Size: 50px-->
+<h1>Institute of Software Engineering</h1> <!--Hello Java Script : Font-Size: 50px-->
 
-<h2>GDSE</h2> <!--IJSE-->
+<h2 id="secondTitle">GDSE</h2> <!--IJSE-->
 
 <h3>Panadura & Galle</h3> <!--Color RED-->
 
@@ -37,15 +38,13 @@
 <img alt="" src="" width="300px">
 
 
-
-
-
-
 <script>
+    /*select by element id*/
+    document.getElementsByTagName("h1")[0].innerText = "Hello Java Script";
+    document.getElementsByTagName("h1")[0].style.fontSize="50px";
 
-
-
-
+    /*select by id*/
+    document.getElementById("secondTitle").innerText="IJSE";
 
 </script>
 
