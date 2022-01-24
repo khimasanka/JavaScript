@@ -10,7 +10,7 @@
 </head>
 <body>
 
-<h1>Institute of Software Engineering</h1> <!--Hello Java Script : Font-Size: 50px-->
+<h1 id="display">Institute of Software Engineering</h1> <!--Hello Java Script : Font-Size: 50px-->
 <h1>Institute of Software Engineering</h1>
 
 <h2 id="secondTitle">GDSE</h2> <!--IJSE-->
@@ -24,7 +24,7 @@
 <hr>
 
 <!--C001-->
-<input placeholder="Input Something" type="text">
+<input id="txtInput" placeholder="Input Something" type="text">
 
 <button id="btn1">Test 1</button>
 <button id="btn2">Test 2</button>
@@ -66,13 +66,20 @@
 
     /*    select button */
     document.getElementById("btn1").addEventListener("click", function () {
-      /*  alert("hello");*/
+        /*  alert("hello");*/
         document.getElementsByTagName("h1")[1].remove();
     });
 
 
+    /*   select the button*/
+    /*   add click event*/
+    /*   Select the input field & collect type info */
+    /* select h1 which we want to display the input text */
+    document.getElementById("btn2").addEventListener("click", function () {
+        /*    alert("Working");*/
+        document.getElementById("display").innerText = document.getElementById("txtInput").value;
 
-
+    });
 
 
 </script>
