@@ -7,4 +7,4 @@
 document.getElementById("");*/
 
 
-console.log("Im from External File");
+console.log("Im from External Script");
