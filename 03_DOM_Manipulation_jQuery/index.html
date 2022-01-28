@@ -9,7 +9,7 @@
     <title>DOM Manipulation With jQuery</title>
 </head>
 <body>
-<h1>Hello jQuery.!</h1>
+<h1 id="firstH1">Hello jQuery.!</h1>
 <h1>Hello jQuery.!</h1>
 <h2>Let's manipulate the DOM</h2>
 <h3 id="titleThree">Let's manipulate the DOM</h3>
@@ -100,7 +100,18 @@
     // $("h3+p").css("background", 'green');
 
     //General Siblings Combinator
-    $("h3~p").css("background", 'green');
+    // $("h3~p").css("background", 'green');
+
+
+    //selector grouping
+    /*$("h1,h2,h3").remove();*/
+
+
+    /*How to write a click event in jQuery*/
+    $("#btn").click(function () {
+        $("#firstH1").css('color', 'red');
+    });
+
 
 </script>
 </body>
