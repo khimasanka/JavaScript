@@ -34,9 +34,10 @@
 <button id="btn1">Set Text</button>
 <button id="btnUp">UP</button>
 <button id="btnDown">Down</button>
+<button id="btnSetImage">Set Image</button>
 <hr>
 
-<img alt="" src="">
+<img alt="" src="" id="display">
 <hr>
 
 
@@ -121,15 +122,23 @@
             $("#secondH1").text($("#txtContent").val());
         });*/
 
+/*
 
     $("#btnUp").click(function () {
         $("#list").prepend("<li>" + $('#txtContent').val() + "</li>");
-        /*<li>text value</li>*/
+        /!*<li>text value</li>*!/
     });
 
 
     $("#btnDown").click(function () {
         $("#list").append("<li>" + $('#txtContent').val() + "</li>");
+    });
+*/
+
+
+    $("#btnSetImage").click(function(){
+        // $("#txtContent").val();// typed value
+        $("#display").attr('src',$("#txtContent").val());
     });
 
 
