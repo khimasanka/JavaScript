@@ -20,7 +20,7 @@
     impedit maiores
     molestias odit perferendis placeat quis quo quos sed voluptatem? Ad architecto at facilis nesciunt omnis.</p>
 <hr>
-<ul>
+<ul id="list">
     <li>ABSD</li>
     <li>GDSE</li>
     <li>DEP</li>
@@ -29,9 +29,11 @@
 
 <hr>
 
-<input id="txtContent" type="text" placeholder="Iput Something">
+<input id="txtContent" placeholder="Iput Something" type="text">
 <button id="btn">Test</button>
 <button id="btn1">Set Text</button>
+<button id="btnUp">UP</button>
+<button id="btnDown">Down</button>
 <hr>
 
 <img alt="" src="">
@@ -108,16 +110,26 @@
     /*$("h1,h2,h3").remove();*/
 
 
-/*
-    /!*How to write a click event in jQuery*!/
-    $("#btn").click(function () {
-        $("#firstH1").css('color', 'red');
+    /*
+        /!*How to write a click event in jQuery*!/
+        $("#btn").click(function () {
+            $("#firstH1").css('color', 'red');
+        });
+    */
+
+    /*    $("#btn1").click(function(){
+            $("#secondH1").text($("#txtContent").val());
+        });*/
+
+
+    $("#btnUp").click(function () {
+        $("#list").prepend("<li>" + $('#txtContent').val() + "</li>");
+        /*<li>text value</li>*/
     });
-*/
 
 
-    $("#btn1").click(function(){
-        $("#secondH1").text($("#txtContent").val());
+    $("#btnDown").click(function () {
+        $("#list").append("<li>" + $('#txtContent').val() + "</li>");
     });
 
 
