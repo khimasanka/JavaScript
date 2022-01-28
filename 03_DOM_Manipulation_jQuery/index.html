@@ -42,44 +42,65 @@
 <script>
 
     /*document.querySelector("h1").style.color='red';
-    document.querySelector("h1").innerText="Hello IJSE";*/
+     document.querySelector("h1").innerText="Hello IJSE";*/
 
 
     /*  $("h1").text("Haai");
-      $("#titleTwo").text("Changed title two");*/
+        $("#titleTwo").text("Changed title two");*/
 
-    /*    jQuery Selector*/
-
-    /*    $("typeselector,id selector")*/
-
+    /* jQuery Selector*/
+    /* $("css selector")*/
 
 
-    /*    how to chanage the default selector symbol*/
-    /*$("")*/
-    /*  var RS = jQuery.noConflict();
+    /*How to change the default selector symbol*/
+    /*$("")*/ // default symbol
+
+    /*var RS = jQuery.noConflict();
       RS("h1").text("Text Changed");*/
+
     // RS() new selector symbol;
 
 
-    /*we can select any dom element from type*/
-    $("h1").text("Hello DOM");
+    /*  /!*we can select any dom element from type*!/
+      $("h1").text("Hello DOM");
 
-    /*id selector*/
-    $("#titleThree").css('color', 'red');
+      /!*id selector*!/
+      $("#titleThree").css('color', 'red');
 
-    /*class selector*/
-    $(".para").css('background', 'red');
+      /!*class selector*!/
+      $(".para").css('background', 'red');
 
-    /*universal selector*/
-    /*    console.log( $("*").text());*/
+      /!*universal selector*!/
+      /!*    console.log( $("*").text());*!/
 
-    /*attribute selector*/
-    $("[id]").remove();
+      /!*attribute selector*!/
+      $("[id]").remove();
 
-    /*pseudo - class selector*/
-     $("li:first-child").css('color','red');
-     $("li:last-child").css('color','green');
-     $("li:nth-child(2)").css('color','orange');
+      /!*pseudo - class selector*!/
+       $("li:first-child").css('color','red');
+       $("li:last-child").css('color','green');
+       $("li:nth-child(2)").css('color','orange');
+       */
+
+
+    /*  What about CSS Combinators..?*/
+
+    /* Child combinator
+     Decendent Combinator
+     Adjacent Combinator
+     Generel Siblings Combinator*/
+
+    /*Child Combinator*/
+    // $("body>ul>li").css('color','red');
+
+    // Decendant Combinator
+    // $("body li").css("color", "orange");
+
+    // Adjacent Combinator
+    // $("h3+p").css("background", 'green');
+
+    //General Siblings Combinator
+    $("h3~p").css("background", 'green');
 
 </script>
 </body>
