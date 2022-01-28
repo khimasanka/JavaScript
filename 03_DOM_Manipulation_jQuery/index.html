@@ -10,7 +10,7 @@
 </head>
 <body>
 <h1 id="firstH1">Hello jQuery.!</h1>
-<h1>Hello jQuery.!</h1>
+<h1 id="secondH1">Hello jQuery.!</h1>
 <h2>Let's manipulate the DOM</h2>
 <h3 id="titleThree">Let's manipulate the DOM</h3>
 <p class="para">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus adipisci aliquid animi explicabo,
@@ -29,8 +29,9 @@
 
 <hr>
 
-<input type="text">
+<input id="txtContent" type="text" placeholder="Iput Something">
 <button id="btn">Test</button>
+<button id="btn1">Set Text</button>
 <hr>
 
 <img alt="" src="">
@@ -107,9 +108,16 @@
     /*$("h1,h2,h3").remove();*/
 
 
-    /*How to write a click event in jQuery*/
+/*
+    /!*How to write a click event in jQuery*!/
     $("#btn").click(function () {
         $("#firstH1").css('color', 'red');
+    });
+*/
+
+
+    $("#btn1").click(function(){
+        $("#secondH1").text($("#txtContent").val());
     });
 
 
