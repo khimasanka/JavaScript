@@ -10,10 +10,14 @@
 </head>
 <body>
 <h1>Hello jQuery.!</h1>
-<h2 id="titleTwo">Let's manipulate the DOM</h2>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus adipisci aliquid animi explicabo, impedit maiores
+<h1>Hello jQuery.!</h1>
+<h2>Let's manipulate the DOM</h2>
+<h3 id="titleThree">Let's manipulate the DOM</h3>
+<p class="para">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus adipisci aliquid animi explicabo,
+    impedit maiores
     molestias odit perferendis placeat quis quo quos sed voluptatem? Ad architecto at facilis nesciunt omnis.</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus adipisci aliquid animi explicabo, impedit maiores
+<p class="para">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus adipisci aliquid animi explicabo,
+    impedit maiores
     molestias odit perferendis placeat quis quo quos sed voluptatem? Ad architecto at facilis nesciunt omnis.</p>
 <hr>
 <ul>
@@ -26,7 +30,7 @@
 <hr>
 
 <input type="text">
-<button>Test</button>
+<button id="btn">Test</button>
 <hr>
 
 <img alt="" src="">
@@ -61,19 +65,21 @@
     $("h1").text("Hello DOM");
 
     /*id selector*/
-
+    $("#titleThree").css('color', 'red');
 
     /*class selector*/
-
+    $(".para").css('background', 'red');
 
     /*universal selector*/
-
+    /*    console.log( $("*").text());*/
 
     /*attribute selector*/
-
+    $("[id]").remove();
 
     /*pseudo - class selector*/
-
+     $("li:first-child").css('color','red');
+     $("li:last-child").css('color','green');
+     $("li:nth-child(2)").css('color','orange');
 
 </script>
 </body>
