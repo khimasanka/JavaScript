@@ -13,6 +13,7 @@
     <link href="assets/fonts/css/all.min.css" rel="stylesheet">
 </head>
 <body>
+<!--Navigation Start-->
 <nav class="navbar navbar-expand-lg navbar-light navColor">
     <div class="container-fluid">
         <a class="navbar-brand fw-bolder text-white brandName" href="#">Simple POS
@@ -25,7 +26,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a aria-current="page" class="nav-link active text-white" href="index.html">Home</a>
+                    <a aria-current="page" class="nav-link active text-white" id="linkHome" href="#">Home</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link text-white" href="#">Order</a>
@@ -37,8 +38,8 @@
                         Other
                     </a>
                     <ul aria-labelledby="navbarDropdown" class="dropdown-menu">
-                        <li><a class="dropdown-item" href="customer.html">Customer Manage</a></li>
-                        <li><a class="dropdown-item" href="item.html">Item Manage</a></li>
+                        <li><a class="dropdown-item" id="linkCustomer" href="#">Customer Manage</a></li>
+                        <li><a class="dropdown-item" id="linkItem" href="#">Item Manage</a></li>
                         <li>
                             <hr class="dropdown-divider">
                         </li>
@@ -49,7 +50,10 @@
         </div>
     </div>
 </nav>
-<section class="container-fluid">
+<!--Navigation End-->
+
+<!--Dashboard Content Start-->
+<section class="container-fluid" id="dashboardContent">
     <section class="row mt-2">
         <div class="col-12 col-lg-7 px-0">
             <div class="carousel slide" data-bs-ride="carousel" id="carouselExampleCaptions">
@@ -101,7 +105,7 @@
                 <div class="col">
                     <div class="myCard">
                         <i class="fas fa-users"></i>
-                       <h1>All Customers</h1>
+                        <h1>All Customers</h1>
                         <h2>230</h2>
                     </div>
                 </div>
@@ -126,6 +130,176 @@
         </div>
     </section>
 </section>
+<!--Dashboard Content End-->
+
+<!--Customer Manage Content Start-->
+<section class="container-fluid mt-3" id="customerContent">
+    <section class="row mt-3 justify-content-around">
+        <div class="col-12 col-md-4">
+            <div class="shadow-sm pt-3 pb-5 px-3 py-3 mt-2">
+                <h1 class="h1 mb-3">Customer Manage</h1>
+                <div class="mb-3">
+                    <label class="form-label" for="srcCusID">Search Customer</label>
+                    <input class="form-control" id="srcCusID" placeholder="Customer ID, NIC, Name" type="text">
+                </div>
+                <button class="btn btn-primary">Search</button>
+                <button class="btn btn-danger">Delete</button>
+                <button class="btn btn-success">Save or Update</button>
+            </div>
+        </div>
+        <div class="col-12 col-md-5">
+            <div class="mb-3">
+                <label class="form-label" for="cusID">Customer ID</label>
+                <input class="form-control" id="cusID" placeholder="Customer ID" type="text">
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="cusName">Customer Name</label>
+                <input class="form-control" id="cusName" placeholder="Customer Name" type="text">
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="cusAddress">Customer Address</label>
+                <input class="form-control" id="cusAddress" placeholder="Customer Address" type="text">
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="cusSalary">Customer Tp</label>
+                <input class="form-control" id="cusSalary" placeholder="Customer Tp" type="text">
+            </div>
+        </div>
+    </section>
+    <section class="row mt-4">
+        <div class="col">
+            <table class="table table-hover">
+                <thead class="bg-danger text-white">
+                <tr>
+                    <th>Customer ID</th>
+                    <th>Customer Name</th>
+                    <th>Customer Address</th>
+                    <th>Customer TP.</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>C001</td>
+                    <td>Ramal Wasuka</td>
+                    <td>Panadura</td>
+                    <td>011 2349867</td>
+                </tr>
+                <tr>
+                    <td>C001</td>
+                    <td>Ramal Wasuka</td>
+                    <td>Panadura</td>
+                    <td>011 2349867</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+</section>
+<!--Customer Manage Content End-->
+
+<!--Item Manage Content Start-->
+<section class="container-fluid mt-3" id="itemContent">
+    <section class="row mt-3 justify-content-around">
+        <div class="col-12 col-md-4">
+            <div class="shadow-sm pt-3 pb-5 px-3 py-3 mt-2">
+                <h1 class="h1 mb-3">Item Manage</h1>
+                <div class="mb-3">
+                    <label class="form-label" for="srcCusID">Search Item</label>
+                    <input class="form-control" id="srcCusID" placeholder="Customer ID, NIC, Name" type="text">
+                </div>
+                <button class="btn btn-primary">Search</button>
+                <button class="btn btn-danger">Delete</button>
+                <button class="btn btn-success">Save or Update</button>
+            </div>
+        </div>
+        <div class="col-12 col-md-5">
+            <div class="mb-3">
+                <label class="form-label" for="itemCode">Item Code</label>
+                <input class="form-control" id="itemCode" placeholder="Item Code" type="text">
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="itemName">Item Name</label>
+                <input class="form-control" id="itemName" placeholder="Item Name" type="text">
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="itemQty">Item Qty</label>
+                <input class="form-control" id="itemQty" placeholder="Item Qty" type="text">
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="itemPrice">Item Price</label>
+                <input class="form-control" id="itemPrice" placeholder="Item Price" type="text">
+            </div>
+        </div>
+    </section>
+    <section class="row mt-4">
+        <div class="col">
+            <table class="table">
+                <thead class="bg-danger text-white">
+                <tr>
+                    <th>Item Code</th>
+                    <th>Item Name</th>
+                    <th>Item Qty</th>
+                    <th>Item Price</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>I001</td>
+                    <td>Lux</td>
+                    <td>200</td>
+                    <td>69</td>
+                </tr>
+                <tr>
+                    <td>I002</td>
+                    <td>Signal</td>
+                    <td>140</td>
+                    <td>120</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+</section>
+<!--Item Manage Content End-->
+
 <script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/jQuery/jquery-3.6.0.min.js"></script>
+<script>
+
+    // hide all content
+    $("#dashboardContent").css("display","block");
+    $("#customerContent").css("display","none");
+    $("#itemContent").css("display","none");
+
+
+    $("#linkCustomer").click(function (){
+        $("#customerContent").css("display","block");
+        $("#dashboardContent").css("display","none");
+        $("#itemContent").css("display","none");
+
+    });
+
+    $("#linkItem").click(function (){
+        $("#itemContent").css("display","block");
+        $("#customerContent").css("display","none");
+        $("#dashboardContent").css("display","none");
+
+    });
+
+
+    $("#linkHome").click(function (){
+        $("#dashboardContent").css("display","block");
+        $("#itemContent").css("display","none");
+        $("#customerContent").css("display","none");
+    });
+
+
+
+
+
+</script>
+
 </body>
 </html>
