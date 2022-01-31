@@ -35,29 +35,47 @@
      int i =10;
      String s = "Hello there";*/
 
-    // What about js..?
-    // Loose/Loosely  type
-     var cusName = "Dasun";
+    /*   // What about js..?
+       // Loose/Loosely  type
+        var cusName = "Dasun";
 
 
-    //Then why is it dynamic typing..?
-    /*dynamically change its type to what we assign*/
+       //Then why is it dynamic typing..?
+       /!*dynamically change its type to what we assign*!/
 
-    var customerID="C001";
-    typeof customerID
-    // 'string'
+       var customerID="C001";
+       typeof customerID
+       // 'string'
 
-    customerID=true;
-    typeof customerID
-    // 'boolean'
+       customerID=true;
+       typeof customerID
+       // 'boolean'
 
-    customerID=10;
-    typeof customerID;
-    // 'number'
+       customerID=10;
+       typeof customerID;
+       // 'number'
 
-    customerID="C001";
-    typeof cusName;
-    // 'string'
+       customerID="C001";
+       typeof cusName;
+       // 'string'
+       */
+
+    /* problems in var */
+    var cusName = "Dasun";
+    var cusName = "Kamal"; // can duplicate identifiers
+    console.log(cusName);
+
+    {
+        var cusAddress="Galle";
+        console.log("Inside Scope "+cusAddress);
+        console.log("Inside Scope "+cusName);
+    }
+
+    console.log("OutSide Scope "+cusAddress); //no scope
+
+
+
+
 
 
 
