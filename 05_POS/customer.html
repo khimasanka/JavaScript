@@ -118,10 +118,13 @@
         let customerAddress = $("#txtCusAddress").val();
         let customerTP = $("#txtCusTP").val();
 
-
+        /*create a html row*/
         let row = `<tr><td>${customerID}</td><td>${customerName}</td><td>${customerAddress}</td><td>${customerTP}</td></tr>`;
 
+        /*select the table body and append the row */
         $("#customerTable").append(row);
+
+
 
     });
 
