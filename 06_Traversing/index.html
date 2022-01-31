@@ -46,6 +46,24 @@
 <script src="assets/jQuery/jquery-3.6.0.min.js"></script>
 <script>
 
+    // Traversing with jQuery
+    $("body").children();
+    //S.fn.init(3)[section#mainSection, script, script, prevObject: S.fn.init(1)]
+
+    ("html").children(); // get all children of html
+    //S.fn.init(3)[head, body, grammarly-desktop-integration, prevObject: S.fn.init(1)]
+
+    $("html").children('body'); // select of the child
+    // S.fn.init[body, prevObject: S.fn.init(1)]
+
+    $("html").children(':nth-child(2)');
+    // S.fn.init[body, prevObject: S.fn.init(1)]
+
+    $("html").children(':nth-child(1)'); // select from psudo class
+    // S.fn.init[head, prevObject: S.fn.init(1)]
+
+
+
 </script>
 </body>
 </html>
