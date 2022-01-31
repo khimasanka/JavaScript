@@ -63,6 +63,27 @@
     // S.fn.init[head, prevObject: S.fn.init(1)]
 
 
+    //==================================================================
+
+    $("#subSection1").children();
+    // S.fn.init(2) [div#div1, div#div2, prevObject: S.fn.init(1)]
+
+    $("#subSection1").children("#div1");
+    // S.fn.init [div#div1, prevObject: S.fn.init(1)]
+
+    $("#subSection1").children("#div1").children();
+    // S.fn.init(2) [p, ul, prevObject: S.fn.init(1)]
+
+    $("#subSection1").children("#div1").children("ul");
+    // S.fn.init [ul, prevObject: S.fn.init(1)]
+
+    $("#subSection1").children("#div1").children("ul").children();
+    // S.fn.init(3) [li, li, li, prevObject: S.fn.init(1)]0: li1:
+
+
+    $("#subSection1").children("#div1").children("ul").children(":nth-child(2)").css('color','red');
+    // S.fn.init [li, prevObject: S.fn.init(1)]
+
 
 </script>
 </body>
