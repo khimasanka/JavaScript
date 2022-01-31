@@ -92,7 +92,7 @@
                     <th>Customer TP.</th>
                 </tr>
                 </thead>
-                <tbody>
+                <tbody id="customerTable">
 
 
                 </tbody>
@@ -118,13 +118,10 @@
         let customerAddress = $("#txtCusAddress").val();
         let customerTP = $("#txtCusTP").val();
 
-        console.log(customerID, customerName, customerAddress, customerTP);
-        console.log(typeof customerID, typeof customerName, typeof customerAddress, typeof customerTP);
 
-        // console.log();
+        let row = `<tr><td>${customerID}</td><td>${customerName}</td><td>${customerAddress}</td><td>${customerTP}</td></tr>`;
 
-        let row = "<tr><td>C001</td><td>Ramal Wasuka</td> <td>Panadura</td><td>011 2349867</td></tr>";
-        console.log(row);
+        $("#customerTable").append(row);
 
     });
 
