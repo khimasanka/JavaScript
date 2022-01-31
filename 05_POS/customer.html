@@ -93,18 +93,8 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <td>C001</td>
-                    <td>Ramal Wasuka</td>
-                    <td>Panadura</td>
-                    <td>011 2349867</td>
-                </tr>
-                <tr>
-                    <td>C001</td>
-                    <td>Ramal Wasuka</td>
-                    <td>Panadura</td>
-                    <td>011 2349867</td>
-                </tr>
+
+
                 </tbody>
             </table>
         </div>
@@ -123,13 +113,18 @@
     $("#btnSaveOrUpdate").click(function () {
 
         //gather customer information
-        $("#txtCusID").val();
-        $("#txtCusName").val();
-        $("#txtCusAddress").val();
-        $("#txtCusTP").val();
+        let customerID = $("#txtCusID").val();
+        let customerName = $("#txtCusName").val();
+        let customerAddress = $("#txtCusAddress").val();
+        let customerTP = $("#txtCusTP").val();
 
+        console.log(customerID, customerName, customerAddress, customerTP);
+        console.log(typeof customerID, typeof customerName, typeof customerAddress, typeof customerTP);
 
         // console.log();
+
+        let row = "<tr><td>C001</td><td>Ramal Wasuka</td> <td>Panadura</td><td>011 2349867</td></tr>";
+        console.log(row);
 
     });
 
