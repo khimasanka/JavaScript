@@ -112,6 +112,10 @@
     // Select Button
     $("#btnSaveOrUpdate").click(function () {
 
+        // remove all the row click events
+        $("#customerTable>tr").off("click");
+
+
         //gather customer information
         let customerID = $("#txtCusID").val();
         let customerName = $("#txtCusName").val();
