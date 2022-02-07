@@ -117,6 +117,15 @@
     //$('body').children().get(0).css(); // error //no such method in dom element
 
 
+    $('body').children().get(0); // return Dom element
+    // <section id=​"mainSection">​…​</section>​
+
+    $($('body').children().get(0)); // if we want to convert in to jQuery Object we can use $()
+    // S.fn.init [section#mainSection]
+
+    $($('body').children().get(0)).text(); // now we can call jQuery Methods
+
+
 </script>
 </body>
 </html>
