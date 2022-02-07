@@ -36,11 +36,33 @@
     mousemove(function)
     */
 
-    $("#txtCusID").keydown(function (event) { //
-        console.log(event.code);
-        console.log(event.key);
+    $("#txtCusID").keydown(function (event) { // event data object
+        // console.log(event.code); //KeyA
+        // console.log(event.key); //A
+
+        if (event.key == "Enter") { // if the enter key press
+            $("#txtCusName").focus();
+        }
     });
 
+    $("#txtCusName").keydown(function (event) { // event data object
+        if (event.key == "Enter") { // if the enter key press
+            $("#txtCusAddress").focus();
+        }
+    });
+
+    $("#txtCusAddress").keydown(function (event) { // event data object
+        if (event.key == "Enter") { // if the enter key press
+            $("#txtCusSalary").focus();
+        }
+    });
+
+    $("#txtCusSalary").keydown(function (event) { // event data object
+        if (event.key == "Enter") { // if the enter key press
+            $("#header").text("Done");
+            $("#txtCusID").focus();
+        }
+    });
 </script>
 </body>
 </html>
