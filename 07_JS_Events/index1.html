@@ -43,7 +43,7 @@
 
 
 // standrad way for writing event in jQuery
-$("#btnTest").on('click',function(){
+$("#btnTest").on('dblclick',function(){
   alert("Hello");
 });
 
@@ -53,7 +53,9 @@ $("#btnTest").click(function (){
   console.log("Hello");
 });
 
-$("#btnTest").off();
+
+$("#btnTest").off("dblclick");
+
 
 
 </script>
