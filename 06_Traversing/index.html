@@ -50,6 +50,8 @@
    /*
        children()
        parent()
+       parents()
+       find()
        get()
        eq();
        children(":nth-child(1)");
@@ -170,6 +172,12 @@
 
    $('#div1').parents("section");
    // S.fn.init(2) [section#subSection1, section#mainSection, prevObject: S.fn.init(1)]
+
+
+
+   /*Find*/
+   $('body').find('p'); // we can find out something inside a element
+   // S.fn.init(2) [p, p, prevObject: S.fn.init(1)]
 
 
 
