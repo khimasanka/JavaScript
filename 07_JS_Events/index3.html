@@ -36,54 +36,10 @@
     mousemove(function)
     */
 
-    /*  $("#btnCustomer").on("click",function(){
-
-      });*/
-
-    $("#btnCustomer").click(function () {
-        alert("Btn Customer Clicked");
-    });
-
-
-    $("#header").dblclick(function () {
-        alert("Double Click Worked");
-    });
-
-    $("#txtCusID").focus();
-
-
-    $("#txtCusID").blur(function (){ // when focus out
-        console.log("Customer ID Blured")
-    });
-
-    $("#txtCusID").keydown(function (){ //
+    $("#txtCusID").keydown(function (event) { //
         console.log("Key Down");
+        console.log(event);
     });
-
-    $("#txtCusID").keypress(function (){
-        console.log("Key Press");
-    });
-
-    $("#txtCusID").keyup(function (){
-        console.log("Key KeyUp");
-    });
-
-
-    $("#txtCusName").keydown(function (){ //
-        console.log("Key Down");
-    });
-
-    $("#txtCusAddress").keypress(function (){ //
-        console.log("Key Press");
-    });
-
-    $("#txtCusSalary").keyup(function (){ //
-        console.log("Key KeyUp");
-    });
-
-
-
-
 
 </script>
 </body>
