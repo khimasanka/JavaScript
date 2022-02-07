@@ -50,7 +50,7 @@
     $("body").children();
     //S.fn.init(3)[section#mainSection, script, script, prevObject: S.fn.init(1)]
 
-    ("html").children(); // get all children of html
+    $("html").children(); // get all children of html
     //S.fn.init(3)[head, body, grammarly-desktop-integration, prevObject: S.fn.init(1)]
 
     $("html").children('body'); // select of the child
@@ -83,6 +83,23 @@
 
     $("#subSection1").children("#div1").children("ul").children(":nth-child(2)").css('color','red');
     // S.fn.init [li, prevObject: S.fn.init(1)]
+
+
+
+    $("body").children().eq("0"); // select child
+    // S.fn.init [section#mainSection, prevObject: S.fn.init(3)]
+
+    $("body").children().eq("1");
+    // S.fn.init [script, prevObject: S.fn.init(3)]
+
+    $("body").children().eq("2");
+    // S.fn.init [script, prevObject: S.fn.init(3)]
+
+    $("body").children(":eq(0)"); // same as the above method.. select nth child
+    // S.fn.init [section#mainSection, prevObject: S.fn.init(1)]
+
+    $("body").children(":eq(1)");
+    // S.fn.init [script, prevObject: S.fn.init(1)]
 
 
 </script>
