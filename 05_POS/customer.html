@@ -57,7 +57,7 @@
                     <label class="form-label" for="srcCusID">Search Customer</label>
                     <input class="form-control" id="srcCusID" placeholder="Customer ID, NIC, Name" type="text">
                 </div>
-                <button id="btnSearch" class="btn btn-primary">Search</button>
+                <button class="btn btn-primary" id="btnSearch">Search</button>
                 <button class="btn btn-danger">Delete</button>
                 <button class="btn btn-success" id="btnSaveOrUpdate">Save or Update</button>
             </div>
@@ -113,7 +113,7 @@
     $("#btnSaveOrUpdate").click(function () {
 
         // remove all the row click events added before
-        $("#customerTable>tr").off("click");
+        $("#customerTable>tr").off();
 
 
         //gather customer information
@@ -127,7 +127,6 @@
 
         /*select the table body and append the row */
         $("#customerTable").append(row);
-
 
 
         //bind the events to the table rows after the row was added
@@ -152,7 +151,14 @@
 
         });
 
+
+        /*Remove selected row from the double click*/
+        $("#customerTable>tr").dblclick(function () {
+           $(this).remove();
+        });
+
     });
+
 
 
 
