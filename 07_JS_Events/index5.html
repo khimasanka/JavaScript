@@ -23,20 +23,6 @@
 
     $("h1").css("position", "relative");
 
-    let text = $('h1').text();
-
-    var position = 0;
-
-    function animateText() {
-        let outPut = text.substr(0, position);
-        console.log(outPut);
-        position++;
-
-        if(position==text.length){
-            position=0;
-        }
-    }
-
 
     $(window).on("mousemove", function (e) {
         // console.log(e.pageX, e.pageY);// mouse current location x and y values
@@ -44,6 +30,19 @@
         $("h1").css("top", e.pageY);
     });
 
+
+    let text = $('h1').text();
+    var count = 0;
+
+    function animateText() {
+        $('h1').text(text.substr(0, count));
+        count++;
+        if (count == text.length) {
+            count = 0;
+        }
+    }
+
+    setInterval(animateText, 100);
 
 </script>
 </body>

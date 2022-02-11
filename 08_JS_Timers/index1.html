@@ -38,17 +38,23 @@
     }
 
 
-    // How to stop a timming function..?
+    // How to stop a timing function..?
     //setTimeout (create) - > clearTimeout()
     //setInterval (create) -> clearInterval();
 
 
-
-    $("#stop").click(function (){
+    $("#stop").click(function () {
         clearInterval(timerID); // stop a timer
     });
 
 
+    // how to stop a timeout
+    let id = setTimeout(test, 200)
+    clearTimeout(id); // so if you wanna stop you can call clear Timeout
+
+    function test() {
+        console.log("call after 200 ms")
+    }
 
 </script>
 </body>
