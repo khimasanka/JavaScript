@@ -8,7 +8,7 @@
     <meta charset="UTF-8">
     <title>Mouse Move with Text</title>
     <style>
-        body{
+        body {
             overflow-x: hidden;
         }
     </style>
@@ -23,13 +23,22 @@
 
     $("h1").css("position", "relative");
 
+    let animateText = $('h1').text();
+
+    var position = 0;
+
+    function animateText() {
+        let outPut = animateText.substr(0, position);
+        console.log(outPut);
+        position++;
+    }
+
+
     $(window).on("mousemove", function (e) {
         // console.log(e.pageX, e.pageY);// mouse current location x and y values
         $("h1").css("left", e.pageX);
         $("h1").css("top", e.pageY);
     });
-
-
 
 
 </script>
