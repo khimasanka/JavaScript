@@ -23,14 +23,18 @@
 
     $("h1").css("position", "relative");
 
-    let animateText = $('h1').text();
+    let text = $('h1').text();
 
     var position = 0;
 
     function animateText() {
-        let outPut = animateText.substr(0, position);
+        let outPut = text.substr(0, position);
         console.log(outPut);
         position++;
+
+        if(position==text.length){
+            position=0;
+        }
     }
 
 
