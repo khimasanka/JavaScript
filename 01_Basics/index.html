@@ -171,7 +171,7 @@
     // Symbol
 
     /*Structural Types*/
-    // Objects
+    // Objects *
     // Functions
 
 
@@ -270,25 +270,67 @@
     /*    What is an  Object..?*/
     /* Named value container*/
 
-    let id = "C001";
-    let name = "Dasun";
-    let address = "Galle";
-    let salary = 1000.00;
-
-    // js literal base Object
-    var customer={
-        id:"C001", //properties (key - value)
-        name:"Dasun",
-        address:"Galle",
-        salary:1000.00
-    }
+    // let id = "C001";
+    // let name = "Dasun";
+    // let address = "Galle";
+    // let salary = 1000.00;
+    //
+    // // js literal base Object
+    // var customer={
+    //     id:"C001", //properties (key - value)
+    //     name:"Dasun",
+    //     address:"Galle",
+    //     salary:1000.00
+    // }
 
     // typeof customer;//object
 
     // how to accsess values from a object
-    // customer.id // dot natation
+    // customer.id // dot notation
     //customer.name
     //customer['id'];// bracket notation
+
+
+    // Function..?
+
+    //class
+    // public void saveCustomer(){
+    //
+    //   }
+
+
+    // // in JS
+    // //how to define a function
+    // function saveCustomer() {
+    //     console.log("Customer Save");
+    // }
+    //
+    // //how to call a function
+    // saveCustomer();
+
+
+
+
+    // Hoisting
+    //variable hoisting
+    //function hoisting
+
+    callTheMethod(); // call first
+
+    //then declare
+    function callTheMethod(){
+        console.log("Hello There")
+    }
+
+    //variable hoisting (only works with var)
+    console.log(myName); // we can use the variable which was declared later
+
+    var myName; //declare later
+
+
+
+
+
 
 
 
