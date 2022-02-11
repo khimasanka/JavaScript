@@ -25,6 +25,7 @@
     let timerID;
 
     $("#start").click(function () {
+        clearInterval(timerID); // off the previous timer
         timerID = setInterval(incrementValue, 100);
         console.log(timerID);
     });
@@ -46,6 +47,9 @@
     $("#stop").click(function (){
         clearInterval(timerID); // stop a timer
     });
+
+
+
 </script>
 </body>
 </html>
