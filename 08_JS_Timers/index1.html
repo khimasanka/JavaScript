@@ -1,0 +1,38 @@
+<!--/**
+* @author : Sanu Vithanage
+* @since : 0.1.0
+**/-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Timers</title>
+    <style>
+        h1 {
+            font-size: 40px;
+        }
+    </style>
+</head>
+<body>
+<h1>1</h1>
+<button id="start">START</button>
+<button id="stop">STOP</button>
+
+
+<script src="assets/jQuery/jquery-3.6.0.min.js"></script>
+<script>
+
+    $("#start").click(function () {
+        setInterval(incrementValue, 100);
+    });
+
+    let count = 1;
+
+    function incrementValue() {
+        $("h1").text(count);
+        count++;
+    }
+
+</script>
+</body>
+</html>
