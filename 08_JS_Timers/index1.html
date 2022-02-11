@@ -22,8 +22,11 @@
 <script src="assets/jQuery/jquery-3.6.0.min.js"></script>
 <script>
 
+    let timerID;
+
     $("#start").click(function () {
-        setInterval(incrementValue, 100);
+        timerID = setInterval(incrementValue, 100);
+        console.log(timerID);
     });
 
     let count = 1;
@@ -33,6 +36,16 @@
         count++;
     }
 
+
+    // How to stop a timming function..?
+    //setTimeout (create) - > clearTimeout()
+    //setInterval (create) -> clearInterval();
+
+
+
+    $("#stop").click(function (){
+        clearInterval(timerID); // stop a timer
+    });
 </script>
 </body>
 </html>
