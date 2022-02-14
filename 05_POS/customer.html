@@ -184,9 +184,10 @@
     const cusAddressRegEx = /^[0-9/A-z. ,]{7,}$/;
     const cusSalaryRegEx = /^[0-9]{1,}[.]?[0-9]{1,2}$/;
 
+
     $('#txtCusID,#txtCusName,#txtCusAddress,#txtCusSalary').on('keydown', function (eventOb) {
         if (eventOb.key == "Tab") {
-            eventOb.preventDefault();
+            eventOb.preventDefault(); // stop execution of the button
         }
     });
 
@@ -234,7 +235,6 @@
         }
     });
     // focusing events end
-
     $("#btnCustomer").attr('disabled', true);
 
     function clearAll() {
