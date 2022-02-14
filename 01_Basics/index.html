@@ -616,11 +616,30 @@
 
 
 
-
-
-
     // Objects continue
+    // literal base objects
+    // function base objects (constructor base objects)
 
+    //literal base objects
+    var customer={
+        id:'C001',
+        name:'Dasun',
+        address:'Galle',
+        salary:1000
+    }
+
+
+    //function base objects
+    function Customer(){
+        this.id="C002";
+        this.name="Ramal";
+        this.address="Panadura";
+        this.salary=100.00;
+    }
+
+    // Customer();//function
+    // this is the object
+    var customer2= new Customer();
 
 
 
