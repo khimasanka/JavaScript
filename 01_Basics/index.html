@@ -438,6 +438,7 @@
     // numbers.indexOf(100); //-1 // if the number not available it returns -1
 
 
+    // Loops and Iteration in JS
     //for
     //while
     //do while
@@ -490,6 +491,94 @@
     // for(var i of names){
     //     console.log(i); // return values
     // }
+
+
+    //for each function (call back function)
+    // var numbers=[10,20,30,40,50];
+    // numbers.forEach(function(e){
+    //     console.log(e);
+    // });
+
+
+    //find method
+    // let response=names.find(function(e){
+    //     return e=="Chamal";
+    // });
+    // response; // return undefined if not available
+
+
+    //filter
+    /*    let myAges=[10,20,30,40,50,60];
+        myAges.filter(function(e){
+            if(e>20){
+                return e; // return values to a array if only the condition is true
+            }
+        });*/
+
+
+
+    //function  continue
+    //declaration
+    //expression (First Class Function)
+
+    // declaration
+    // function saveCustomer() {
+    //     console.log("Customer Saved");
+    // }
+    // saveCustomer();
+
+
+    // Expression (js has first class functions)
+    // var marriedState = function () {
+    //     return false;
+    // }
+    // var res = marriedState();
+    // console.log(res);
+
+
+
+    // Parameters in JS Functions
+    // function saveCustomer(id,name){
+    //     console.log(id,name)
+    // }
+    // saveCustomer("C001","Dasun");
+
+
+    //Case Two
+    // function saveCustomer(id,name){
+    //     console.log(id,name)
+    // }
+    // saveCustomer(); // no error
+
+
+    //Case Two
+    // function saveCustomer(){
+    //     console.log("Called")
+    // }
+    // saveCustomer("Test","Test"); // no error
+
+
+    // why the above problem does not generate any problem..?
+
+    // function saveCustomer(id,name,address){
+    //     console.log(arguments);
+    //     // console.log(arguments[0],arguments[1]);
+    // }
+    // saveCustomer("C001","Kasun","pandura"); // put all the values in arguments array
+
+
+
+    // What about method overloading
+    function saveCustomer(id,name,address){
+        console.log("id:name:address ",id,name,address);
+    }
+
+    function saveCustomer(id,name){
+        console.log("id:name ",id,name,arguments[2]);
+    }
+
+    saveCustomer("C001","Dasun","Galle"); // overloading not working
+    //allways call the last method
 
 
 
