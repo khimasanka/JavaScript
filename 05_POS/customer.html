@@ -54,8 +54,8 @@
             <div class="shadow-sm pt-3 pb-5 px-3 py-3 mt-2">
                 <h1 class="h1 mb-3">Customer Manage</h1>
                 <div class="mb-3">
-                    <label class="form-label" for="srcCusID">Search Customer</label>
-                    <input class="form-control" id="srcCusID" placeholder="Customer ID, NIC, Name" type="text">
+                    <label class="form-label" for="txtSearchCusID">Search Customer</label>
+                    <input class="form-control" id="txtSearchCusID" placeholder="Customer ID, NIC, Name" type="text">
                 </div>
                 <button class="btn btn-primary" id="btnSearch">Search</button>
                 <button class="btn btn-danger">Delete</button>
@@ -66,22 +66,22 @@
             <div class="mb-3">
                 <label class="form-label" for="txtCusID">Customer ID</label>
                 <input class="form-control" id="txtCusID" placeholder="Customer ID" type="text">
-                <p><small id="lblcusid" class="text-danger pl-1"></small></p>
+                <p><small class="text-danger pl-1" id="lblcusid"></small></p>
             </div>
             <div class="mb-3">
                 <label class="form-label" for="txtCusName">Customer Name</label>
                 <input class="form-control" id="txtCusName" placeholder="Customer Name" type="text">
-                <p><small id="lblcusname" class="text-danger pl-1"></small></p>
+                <p><small class="text-danger pl-1" id="lblcusname"></small></p>
             </div>
             <div class="mb-3">
                 <label class="form-label" for="txtCusAddress">Customer Address</label>
                 <input class="form-control" id="txtCusAddress" placeholder="Customer Address" type="text">
-                <p><small id="lblcusaddress" class="text-danger pl-1"></small></p>
+                <p><small class="text-danger pl-1" id="lblcusaddress"></small></p>
             </div>
             <div class="mb-3">
                 <label class="form-label" for="txtCusSalary">Customer Salary</label>
                 <input class="form-control" id="txtCusSalary" placeholder="Customer Salary" type="text">
-                <p><small id="lblcussalary" class="text-danger pl-1"></small></p>
+                <p><small class="text-danger pl-1" id="lblcussalary"></small></p>
             </div>
         </div>
     </section>
@@ -93,7 +93,7 @@
                     <th>Customer ID</th>
                     <th>Customer Name</th>
                     <th>Customer Address</th>
-                    <th>Customer TP.</th>
+                    <th>Customer Salary</th>
                 </tr>
                 </thead>
                 <tbody id="customerTable">
@@ -120,26 +120,9 @@
         // remove all the row click events added before
         // $("#customerTable>tr").off();
 
-
-        //gather customer information
-        let customerID = $("#txtCusID").val();
-        let customerName = $("#txtCusName").val();
-        let customerAddress = $("#txtCusAddress").val();
-        let customerSalary = $("#txtCusSalary").val();
-
-        //create Object
-        var customerObject={
-            id:customerID,
-            name:customerName,
-            address:customerAddress,
-            salary:customerSalary
-        };
-
-        customerDB.push(customerObject);
-
-
+        saveCustomer();
+        clearAll();
         loadAllCustomers();
-
 
 
         //bind the events to the table rows after the row was added
@@ -173,31 +156,74 @@
     });
 
 
-   /* var regExCusID = /^(C00-)[0-9]{3,4}$/;
+    /* var regExCusID = /^(C00-)[0-9]{3,4}$/;
 
-    $("#txtCusID").keyup(function () {
-        let input = $("#txtCusID").val();
-        if (regExCusID.test(input)) {
-            $("#txtCusID").css('border', '2px solid green');
-            $("#error").text("");
-        } else {
-            $("#txtCusID").css('border', '2px solid red');
-            $("#error").text("Wrong format : C00-001");
-        }
-    });
-*/
+     $("#txtCusID").keyup(function () {
+         let input = $("#txtCusID").val();
+         if (regExCusID.test(input)) {
+             $("#txtCusID").css('border', '2px solid green');
+             $("#error").text("");
+         } else {
+             $("#txtCusID").css('border', '2px solid red');
+             $("#error").text("Wrong format : C00-001");
+         }
+     });
+ */
 
 
-    function loadAllCustomers(){
+    function loadAllCustomers() {
         $("#customerTable").empty();
-        for(var i of customerDB){
+        for (var i of customerDB) {
             /*create a html row*/
-            let row = `<tr><td>${ i.id}</td><td>${ i.name}</td><td>${i.address}</td><td>${i.salary}</td></tr>`;
+            let row = `<tr><td>${i.id}</td><td>${i.name}</td><td>${i.address}</td><td>${i.salary}</td></tr>`;
             /*select the table body and append the row */
             $("#customerTable").append(row);
         }
     }
 
+    function saveCustomer() {
+        //gather customer information
+        let customerID = $("#txtCusID").val();
+        let customerName = $("#txtCusName").val();
+        let customerAddress = $("#txtCusAddress").val();
+        let customerSalary = $("#txtCusSalary").val();
+
+        //create Object
+        var customerObject = {
+            id: customerID,
+            name: customerName,
+            address: customerAddress,
+            salary: customerSalary
+        };
+
+        customerDB.push(customerObject);
+    }
+
+
+    // search customer
+    $("#btnSearch").click(function () {
+        var searchID = $("#txtSearchCusID").val();
+
+        var response = searchCustomer(searchID);
+        if (response) {
+            $("#txtCusID").val(response.id);
+            $("#txtCusName").val(response.name);
+            $("#txtCusAddress").val(response.address);
+            $("#txtCusSalary").val(response.salary);
+        }else{
+            clearAll();
+            alert("No Such a Customer");
+        }
+    });
+
+
+    function searchCustomer(id) {
+        for (let i = 0; i < customerDB.length; i++) {
+            if (customerDB[i].id == id) {
+                return customerDB[i];
+            }
+        }
+    }
 
 
     // customer reguler expressions
@@ -264,7 +290,7 @@
         $('#txtCusID,#txtCusName,#txtCusAddress,#txtCusSalary').css('border', '2px solid #ced4da');
         $('#txtCusID').focus();
         $("#btnCustomer").attr('disabled', true);
-
+        loadAllCustomers();
         $("#lblcusid,#lblcusname,#lblcusaddress,#lblcussalary").text("");
     }
 
@@ -324,7 +350,8 @@
                     if (resp) {
                         let res = confirm("Do you really need to add this Customer..?");
                         if (res) {
-
+                            saveCustomer();
+                            clearAll();
                         }
                     } else {
                         $("#txtCusSalary").focus();
