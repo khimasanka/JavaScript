@@ -878,8 +878,10 @@
     //set
 
     var color={
+     // id: // we cannot create properties without values. if we want to do that we have to use the following way
 
     }
+
     // how to create Accessor properties..?
     Object.defineProperty(color,'id',{
         get(){
@@ -890,11 +892,39 @@
         }
     });
 
+    Object.defineProperty(color,'name',{
+        get(){
+            return id;
+        },
+        set(v){
+            id=v;
+        }
+    });
+
+    Object.defineProperty(color,'address',{
+        get(){
+            return id;
+        },
+        set(v){
+            id=v;
+        },
+        enumerable:true,
+        configurable:true,
+        // writable:true // error
+    });
+
     Object.getOwnPropertyDescriptor(color,'id');
     //{enumerable: false, configurable: false, get: ƒ, set: ƒ}
 
     color.id="Red"; // set the value through setter
     color.id; //'Red' // get the value through setter
+
+
+    //missing property descriptors in accessor properties
+    // writable = because there is no direct value we dont need writable
+    // value = no direct value
+
+
 
 
 
