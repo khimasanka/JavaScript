@@ -536,7 +536,6 @@
     // console.log(res);
 
 
-
     // Parameters in JS Functions
     // function saveCustomer(id,name){
     //     console.log(id,name)
@@ -567,7 +566,6 @@
     // saveCustomer("C001","Kasun","pandura"); // put all the values in arguments array
 
 
-
     // What about method overloading
     // function saveCustomer(id,name,address){
     //     console.log("id:name:address ",id,name,address);
@@ -583,37 +581,36 @@
 
     // boolean result of conditions
 
-   //  if({}){
-   //      console.log("true");
-   //  }
-   //  // true
-   //
-   //  if(10){
-   //      console.log("true");
-   //  }
-   //  // true
-   //
-   //  if("a"){
-   //      console.log("true");
-   //  }
-   //  // true
-   //
-   //
-   //  if(){ //error
-   //      console.log("true");
-   //  }
-   // //Uncaught SyntaxError: Unexpected token ')'
-   //
-   //  if(null){
-   //      console.log("true");
-   //  }
-   //  // undefined
-   //
-   //  if(undefined){
-   //      console.log("true");
-   //  }
-   //  // undefined
-
+    //  if({}){
+    //      console.log("true");
+    //  }
+    //  // true
+    //
+    //  if(10){
+    //      console.log("true");
+    //  }
+    //  // true
+    //
+    //  if("a"){
+    //      console.log("true");
+    //  }
+    //  // true
+    //
+    //
+    //  if(){ //error
+    //      console.log("true");
+    //  }
+    // //Uncaught SyntaxError: Unexpected token ')'
+    //
+    //  if(null){
+    //      console.log("true");
+    //  }
+    //  // undefined
+    //
+    //  if(undefined){
+    //      console.log("true");
+    //  }
+    //  // undefined
 
 
     // Objects continue
@@ -640,7 +637,6 @@
     // // Customer();//function
     // // this is the object
     // var customer2= new Customer();
-
 
 
     //how to add methods inside objects
@@ -709,31 +705,49 @@
     // customer2.printMyID();
 
 
-
     // Constructor base..?
-    var customer={
-        id:"C001",
-        name:"Dasun",
-        address:"Galle",
-        salary:1000.00
+    //here we should submit values when the object is created
+    //  var customer={
+    //      id:"C001",
+    //      name:"Dasun",
+    //      address:"Galle",
+    //      salary:1000.00
+    //  }
+    //
+    //  // Constructor behaviour from Functions
+    //  function CustomerDTO(id,name,address,salary){
+    //      this.id=id;
+    //      this.name=name;
+    //      this.address=address;
+    //      this.salary=salary;
+    //  }
+    //
+    // var customer2= new CustomerDTO("C001","Kamal","Panadura",100.30);
+    // var customer3= new CustomerDTO("C002","Ramal","Galle",300.30);
+
+
+    // What about encapsulation..?
+
+    // var customer = {
+    //     id: "C001" //property
+    // }
+    // // no safety with properties
+    // customer.name="Kamal"; // add new property
+    // delete customer.name; //remove property name
+    // customer.id="C002"; // can change value
+    // Object.keys(customer); // can count keys
+
+    // what about objects using Functions..?
+
+    function Item(code) {
+        this.code = code;
     }
 
-    // Consturctor behaviour from Functions
-    function CustomerDTO(id,name,address,salary){
-        this.id=id;
-        this.name=name;
-        this.address=address;
-        this.salary=salary;
-    }
-
-   var customer2= new CustomerDTO("C001","Kamal","Panadura",100.30);
-   var customer3= new CustomerDTO("C002","Ramal","Galle",300.30);
-
-
-
-
-
-
+    var item = new Item("I001");
+    item.code = "I002"; // can change value
+    item.name = "Lux";// add new property
+    delete item.code;  //remove property name
+    Object.keys(item);// can count keys
 
 
 </script>
