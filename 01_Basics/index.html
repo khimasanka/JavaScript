@@ -769,7 +769,7 @@
 
     // lets change the writable property to false
     Object.defineProperty(customer,'id',{
-        writable:false
+        writable:false // id value cannot change
     });
 
     Object.getOwnPropertyDescriptor(customer,'id');
@@ -778,6 +778,33 @@
     customer.id="C004"; // no change happen
 
     customer.id;//C001
+
+
+    // what about enumerable
+    Object.defineProperty(customer,'id',{
+        enumerable: false // remove Object key from countable state // Object.keys();
+    });
+
+    Object.getOwnPropertyDescriptor(customer,'id');
+    // {value: 'C001', writable: false, enumerable: false, configurable: true}
+
+    //can we delete ..? yes
+    //count = no
+    //value change = No
+
+    //can we change writable to true again..? yes
+    Object.defineProperty(customer,'id',{
+        writable: true// can change no problem
+    });
+
+    Object.getOwnPropertyDescriptor(customer,'id');
+    // {value: 'C001', writable: true, enumerable: false, configurable: true}
+
+    //can we delete ..? yes
+    //count = no
+    //value change = Yes
+
+
 
 
 
