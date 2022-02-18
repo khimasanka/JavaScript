@@ -850,79 +850,119 @@
 
     // Data properties..?
 
+    // var customer={
+    //     id:'C001', // data properties
+    //     name:'Kasun'
+    // }
+    //
+    // // value - c001
+    // //enumerable
+    // //configurable
+    // //writable
+    //
+    // function Item(){
+    //     this.id="C001"; // data property
+    // }
+    // var item=new Item();
+    //
+    //
+    //
+    // //Accessor Properties
+    // // the properties which dont have direct values..?
+    //
+    // // Property Descriptors..?
+    //
+    // //enumerable = false
+    // //configurable=false
+    // //get
+    // //set
+    //
+    // var color={
+    //  // id: // we cannot create properties without values. if we want to do that we have to use the following way
+    //
+    // }
+    //
+    // // how to create Accessor properties..?
+    // Object.defineProperty(color,'id',{
+    //     get(){
+    //         return id;
+    //     },
+    //     set(v){
+    //         id=v;
+    //     }
+    // });
+    //
+    // Object.defineProperty(color,'name',{
+    //     get(){
+    //         return id;
+    //     },
+    //     set(v){
+    //         id=v;
+    //     }
+    // });
+    //
+    // Object.defineProperty(color,'address',{
+    //     get(){
+    //         return id;
+    //     },
+    //     set(v){
+    //         id=v;
+    //     },
+    //     enumerable:true,
+    //     configurable:true,
+    //     // writable:true // error
+    // });
+    //
+    // Object.getOwnPropertyDescriptor(color,'id');
+    // //{enumerable: false, configurable: false, get: ƒ, set: ƒ}
+    //
+    // color.id="Red"; // set the value through setter
+    // color.id; //'Red' // get the value through setter
+    //
+    //
+    // //missing property descriptors in accessor properties
+    // // writable = because there is no direct value we dont need writable
+    // // value = no direct value
+
+
+
+
+    // encapsulate
+
     var customer={
-        id:'C001', // data properties
-        name:'Kasun'
-    }
-
-    // value - c001
-    //enumerable
-    //configurable
-    //writable
-
-    function Item(){
-        this.id="C001"; // data property
-    }
-    var item=new Item();
-
-
-
-    //Accessor Properties
-    // the properties which dont have direct values..?
-
-    // Property Descriptors..?
-
-    //enumerable = false
-    //configurable=false
-    //get
-    //set
-
-    var color={
-     // id: // we cannot create properties without values. if we want to do that we have to use the following way
-
-    }
-
-    // how to create Accessor properties..?
-    Object.defineProperty(color,'id',{
-        get(){
-            return id;
+        id:"C001", // we cannot be able to access them directly (private)
+        name:"Dasun",
+        address:"Galle",
+        salary:100.00,
+        getCustomerID:function (){
+            return this.id; // this should be allowed
         },
-        set(v){
-            id=v;
+        setCustomerID:function (id){
+            this.id=id;
         }
-    });
+    }
 
-    Object.defineProperty(color,'name',{
-        get(){
-            return id;
-        },
-        set(v){
-            id=v;
+    // what options..?
+    // customer.id;
+
+    function Customer(id,name,address,salary){
+        this.id=id;
+        this.name=name;
+        this.address=address;
+        this.salary=salary;
+        this.getCustomerID=function (){
+            return this.id;
         }
-    });
+        this.setCustomerID=function (id){
+            this.id=id;
+        }
+    }
 
-    Object.defineProperty(color,'address',{
-        get(){
-            return id;
-        },
-        set(v){
-            id=v;
-        },
-        enumerable:true,
-        configurable:true,
-        // writable:true // error
-    });
+    var c1= new Customer("C001","Dasun","Galle",1000);
+    // c1.address; if this is ok. there is no encapsulation // not allow
 
-    Object.getOwnPropertyDescriptor(color,'id');
-    //{enumerable: false, configurable: false, get: ƒ, set: ƒ}
-
-    color.id="Red"; // set the value through setter
-    color.id; //'Red' // get the value through setter
-
-
-    //missing property descriptors in accessor properties
-    // writable = because there is no direct value we dont need writable
-    // value = no direct value
+    c1.getCustomerID(); // allow
+    c1.setCustomerID("C002"); // allow
 
 
 
