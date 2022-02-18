@@ -981,56 +981,82 @@
     // console.log(i); // this is ok
 
 
-    // Make encapsulated Objects Using JS variable scopes
-    function CustomerDTO(id, name, address, salary) {
-        var id = id;
-        var name = name;
-        var address = address;
-        var salary = salary;
+    // // Make encapsulated Objects Using JS variable scopes
+    // function CustomerDTO(id, name, address, salary) {
+    //     var id = id;
+    //     var name = name;
+    //     var address = address;
+    //     var salary = salary;
+    //
+    // }
+    // var cc = new CustomerDTO("C001", "Dasun", "Galle", 1000);
+    // cc.id; // not allowed
+    //
+    //
+    // function CustomerDTO(id, name, address, salary) {
+    //     var id = id;
+    //     var name = name;
+    //     var address = address; // these are not visible to the CustomerDTO Objects
+    //     var salary = salary;
+    //
+    //     this.getCustomerID = function () { // if you use this keyword for methods or properties you can used them in Objects
+    //         return id;
+    //     }
+    //
+    // }
+    //
+    //
+    // var cc = new CustomerDTO("C001", "Dasun", "Galle", 1000);
+    // cc.getCustomerID(); // allowed
+    // // cc.id // not allowed
+    //
+    //
+    // // then we can create encapsulation using this
+    // function CustomerDTO(id, name, address, salary) {
+    //     var __id = id; // we use this convention to show these are absolutely private
+    //     var __name = name;
+    //     var __address = address;
+    //     var __salary = salary;
+    //
+    //     this.getCustomerID = function () {
+    //         return __id;
+    //     }
+    //     this.setCustomerID = function (v) {
+    //         __id = v;
+    //     }
+    // }
+    //
+    //
+    // var cc = new CustomerDTO("C001", "Dasun", "Galle", 1000);
+    // cc.id; // not allowed
+    // cc.setCustomerID("C004"); // ok
+    // cc.getCustomerID(); // ok
+
+
+    // Prototype base Inheritance
+    var customer={
+        id:"C001"
+    }
+
+    Object.prototype// we can access the prototype of Object
+    Object.prototype.age=100; // we can add  new Property to prototype
+
+    //now when we created objects we can use the age property for all objects
+
+    customer.age; //ok
+
+    var newCustomer={
 
     }
-    var cc = new CustomerDTO("C001", "Dasun", "Galle", 1000);
-    cc.id; // not allowed
+    newCustomer.age; //ok
 
 
-    function CustomerDTO(id, name, address, salary) {
-        var id = id;
-        var name = name;
-        var address = address; // these are not visible to the CustomerDTO Objects
-        var salary = salary;
-
-        this.getCustomerID = function () { // if you use this keyword for methods or properties you can used them in Objects
-            return id;
-        }
-
-    }
 
 
-    var cc = new CustomerDTO("C001", "Dasun", "Galle", 1000);
-    cc.getCustomerID(); // allowed
-    // cc.id // not allowed
 
 
-    // then we can create encapsulation using this
-    function CustomerDTO(id, name, address, salary) {
-        var __id = id; // we use this convention to show these are absolutely private
-        var __name = name;
-        var __address = address;
-        var __salary = salary;
-
-        this.getCustomerID = function () {
-            return __id;
-        }
-        this.setCustomerID = function (v) {
-            __id = v;
-        }
-    }
 
 
-    var cc = new CustomerDTO("C001", "Dasun", "Galle", 1000);
-    cc.id; // not allowed
-    cc.setCustomerID("C004"); // ok
-    cc.getCustomerID(); // ok
 
 
 </script>
