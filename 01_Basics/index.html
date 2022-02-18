@@ -989,8 +989,8 @@
         var salary = salary;
 
     }
-
     var cc = new CustomerDTO("C001", "Dasun", "Galle", 1000);
+    cc.id; // not allowed
 
 
     function CustomerDTO(id, name, address, salary) {
@@ -1007,10 +1007,11 @@
 
 
     var cc = new CustomerDTO("C001", "Dasun", "Galle", 1000);
+    cc.getCustomerID(); // allowed
+    // cc.id // not allowed
 
-    cc.getCustomerID();
 
-
+    // then we can create encapsulation using this
     function CustomerDTO(id, name, address, salary) {
         var __id = id; // we use this convention to show these are absolutely private
         var __name = name;
