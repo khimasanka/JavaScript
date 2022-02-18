@@ -644,33 +644,56 @@
 
 
     //how to add methods inside objects
-    var customer={
-        id:'C001',
-        name:'Dasun',
-        address:'Galle',
-        salary:1000,
-        age:{ age:30, year:1990},
-        printMyName:function(){
-            console.log("My Name is ",this.id);
-        }
-    }
-    customer.id; //property
-    customer.printMyName(); //if property is a method
+    // var customer={
+    //     id:'C001',
+    //     name:'Dasun',
+    //     address:'Galle',
+    //     salary:1000,
+    //     age:{ age:30, year:1990},
+    //     printMyName:function(){
+    //         console.log("My Name is ",this.id);
+    //     }
+    // }
+    // customer.id; //property
+    // customer.printMyName(); //if property is a method
 
 
     //function base objects
+    // function Customer(){
+    //     this.id="C002";
+    //     this.name="Ramal";
+    //     this.address="Panadura";
+    //     this.salary=100.00;
+    //     this.printMyDetails=function(){
+    //         console.log("My Name Is ",this.name)
+    //     }
+    // }
+    //
+    // var cus2= new Customer();
+    // cus2.printMyDetails();
+
+
+    //Can we add dynamic Properties to the js Objects..? YES
+    var customer={
+        id:'C001'
+    }
+    customer; // {id: 'C001'}
+
+    customer.name="Dasun";// added new property
+    customer; // {id: 'C001', name: 'Dasun'}
+
+
+    // Function base Objects..? YES
     function Customer(){
         this.id="C002";
-        this.name="Ramal";
-        this.address="Panadura";
-        this.salary=100.00;
-        this.printMyDetails=function(){
-            console.log("My Name Is ",this.name)
-        }
     }
+    var customer2= new Customer();
 
-    var cus2= new Customer();
-    cus2.printMyDetails();
+    customer2 ; //Customer{id: 'C002'}
+    customer2.age=10;
+    customer2; //Customer{id: 'C002', age: 10}
+
+
 
 
     // Constructor base..?
