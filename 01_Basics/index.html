@@ -739,15 +739,53 @@
 
     // what about objects using Functions..?
 
-    function Item(code) {
-        this.code = code;
+    // function Item(code) {
+    //     this.code = code;
+    // }
+    //
+    // var item = new Item("I001");
+    // item.code = "I002"; // can change value
+    // item.name = "Lux";// add new property
+    // delete item.code;  //remove property name
+    // Object.keys(item);// can count keys
+
+
+    /*Property Descriptors*/
+    //value
+    //enumerable
+    //configurable
+    //writable // stop changing values
+
+
+    // every property we have property descriptors
+    //how to view them..?
+    var customer={
+        id:'C001'
     }
 
-    var item = new Item("I001");
-    item.code = "I002"; // can change value
-    item.name = "Lux";// add new property
-    delete item.code;  //remove property name
-    Object.keys(item);// can count keys
+    Object.getOwnPropertyDescriptor(customer,'id');
+    //{value: 'C001', writable: true, enumerable: true, configurable: true}
+
+
+    // lets change the writable property to false
+    Object.defineProperty(customer,'id',{
+        writable:false
+    });
+
+    Object.getOwnPropertyDescriptor(customer,'id');
+    //{value: 'C001', writable: false, enumerable: true, configurable: true}
+
+    customer.id="C004"; // no change happen
+
+    customer.id;//C001
+
+
+
+
+
+
+
+
 
 
 </script>
