@@ -842,7 +842,6 @@
     // // after applying false to the configurable you cannot change anything of the property
 
 
-
     //There are two types of properties
     //Data Properties
     //Accessor properties
@@ -925,65 +924,112 @@
     // // value = no direct value
 
 
-
-
     // encapsulate
 
-    var customer={
-        id:"C001", // we cannot be able to access them directly (private) // we can set enumerable false.. but its not a complete solution
-        name:"Dasun",
-        address:"Galle",
-        salary:100.00,
-        getCustomerID:function (){
-            return this.id; // this should be allowed
-        },
-        setCustomerID:function (id){
-            this.id=id;
-        }
-    }
+    // var customer={
+    //     id:"C001", // we cannot be able to access them directly (private) // we can set enumerable false.. but its not a complete solution
+    //     name:"Dasun",
+    //     address:"Galle",
+    //     salary:100.00,
+    //     getCustomerID:function (){
+    //         return this.id; // this should be allowed
+    //     },
+    //     setCustomerID:function (id){
+    //         this.id=id;
+    //     }
+    // }
 
     // what options..?
     // customer.id;
 
-    function Customer(id,name,address,salary){
-        this.id=id;
-        this.name=name;
-        this.address=address;
-        this.salary=salary;
-        this.getCustomerID=function (){
-            return this.id;
+    // function Customer(id,name,address,salary){
+    //     this.id=id;
+    //     this.name=name;
+    //     this.address=address;
+    //     this.salary=salary;
+    //     this.getCustomerID=function (){
+    //         return this.id;
+    //     }
+    //     this.setCustomerID=function (id){
+    //         this.id=id;
+    //     }
+    // }
+    //
+    // var c1= new Customer("C001","Dasun","Galle",1000);
+    // // c1.address; if this is ok. there is no encapsulation // not allow
+    //
+    // c1.getCustomerID(); // allow
+    // c1.setCustomerID("C002"); // allow
+
+
+    // // Variable scope
+    // var a=10; // global
+    //
+    // function hello(){
+    //     var name="Dasun"; // local - function scope
+    //     console.log(a);
+    //
+    // }
+    // console.log(name); // not accsecible
+    //
+    //
+    // // case 2
+    // {
+    //     var i=0;
+    //
+    // }
+    // console.log(i); // this is ok
+
+
+    // Make encapsulated Objects Using JS variable scopes
+    function CustomerDTO(id, name, address, salary) {
+        var id = id;
+        var name = name;
+        var address = address;
+        var salary = salary;
+
+    }
+
+    var cc = new CustomerDTO("C001", "Dasun", "Galle", 1000);
+
+
+    function CustomerDTO(id, name, address, salary) {
+        var id = id;
+        var name = name;
+        var address = address; // these are not visible to the CustomerDTO Objects
+        var salary = salary;
+
+        this.getCustomerID = function () { // if you use this keyword for methods or properties you can used them in Objects
+            return id;
         }
-        this.setCustomerID=function (id){
-            this.id=id;
+
+    }
+
+
+    var cc = new CustomerDTO("C001", "Dasun", "Galle", 1000);
+
+    cc.getCustomerID();
+
+
+    function CustomerDTO(id, name, address, salary) {
+        var __id = id; // we use this convention to show these are absolutely private
+        var __name = name;
+        var __address = address;
+        var __salary = salary;
+
+        this.getCustomerID = function () {
+            return __id;
+        }
+        this.setCustomerID = function (v) {
+            __id = v;
         }
     }
 
-    var c1= new Customer("C001","Dasun","Galle",1000);
-    // c1.address; if this is ok. there is no encapsulation // not allow
 
-    c1.getCustomerID(); // allow
-    c1.setCustomerID("C002"); // allow
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    var cc = new CustomerDTO("C001", "Dasun", "Galle", 1000);
+    cc.id; // not allowed
+    cc.setCustomerID("C004"); // ok
+    cc.getCustomerID(); // ok
 
 
 </script>
