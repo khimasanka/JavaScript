@@ -682,6 +682,15 @@
     customer.name="Dasun";// added new property
     customer; // {id: 'C001', name: 'Dasun'}
 
+    // can we add methods also..? YES
+    customer.printMyName=function(){
+        console.log("My Name is "+ this.name);
+    }
+
+    customer; //{id: 'C001', name: 'Dasun', printMyName: ƒ}
+    customer.printMyName();
+
+
 
     // Function base Objects..? YES
     function Customer(){
