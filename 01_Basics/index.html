@@ -805,9 +805,41 @@
     //value change = Yes
 
 
+    // What about configurable..?
+
+    Object.defineProperty(customer,'id',{
+        configurable: false
+    });
+
+    Object.getOwnPropertyDescriptor(customer,'id');
+    // {value: 'C001', writable: true, enumerable: false, configurable: false}
+
+    //can we delete ..? no
+    //count = no
+    //value change = Yes
 
 
+    // Special Behaviours in Configurable
+    //can we turn on configurable again after false..? No
 
+    // Object.defineProperty(customer,'id',{
+    //     configurable: true// no
+    // });
+
+
+    // can we change other property descriptors..?
+    // writable..?
+    // we can do it if it is true
+    Object.defineProperty(customer,'id',{
+        writable: false// can change true to false one time
+    });
+
+    // this is error
+    Object.defineProperty(customer,'id',{
+        writable: true// no.. no allowed// because configurable is false
+    });
+
+    // after applying false to the configurable you cannot change anything of the property
 
 
 
