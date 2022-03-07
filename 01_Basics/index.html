@@ -1051,7 +1051,6 @@
     // newCustomer.age; //ok
 
 
-
     //OOP - Inheritance
     // what is a prototype..?
 
@@ -1069,15 +1068,25 @@
     // customer2.id
 
 
+    function Vehicle(model, year) {
+        this.model = model;
+        this.year = year;
+        this.park = function () {
+            return this.model + "-" + this.year + " is going to park";
+        }
+    }
+
+    var v1 = new Vehicle("Benz", 2022);
+    var res = v1.park();
+    console.log(res);
 
 
+    function Car(model,year){
 
+    }
 
-
-
-
-
-
+    var c= new Car("Toyota",2019);
+    c.park();
 
 
 </script>
