@@ -1119,27 +1119,59 @@
 
 
     // Solution for Inheritance Problem
-    function Vehicle(model,year){
-        this.model=model;
-        this.year=year;
-        this.park=function (){
-            return this.model+"-"+this.year+" is going to park";
+    //case 1
+    // function Vehicle(model,year){
+    //     this.model=model;
+    //     this.year=year;
+    //     this.park=function (){
+    //         return this.model+"-"+this.year+" is going to park";
+    //     }
+    // }
+    //
+    //
+    // function Car(model,year){
+    //     Vehicle.apply(this,arguments);
+    // }
+    //
+    //
+    // Car.prototype=Object.create(Vehicle.prototype);//create an empty object referring to the Vehicle prototype
+    // Car.prototype.constructor=Car;
+    //
+    //
+    // var v= new Vehicle("Toyota",2019);
+    // var c= new Car("Benz",2021);
+    // c.park(); //'Benz-2021 is going to park'
+
+
+
+
+    // Inheritance Case 2
+    function Animal(id,name){
+        this.id=id;
+        this.name=name;
+        this.cry=function (){
+            return "The "+this.name+"-"+this.id+" is Crying";
         }
     }
 
+    var a= new Animal("A001","Dog");
 
-    function Car(model,year){
-        Vehicle.apply(this,arguments);
+    function Cat(id,name){
+        Animal.apply(this,arguments);
     }
 
-
-    Car.prototype=Object.create(Vehicle.prototype);//create an empty object referring to the Vehicle prototype
-    Car.prototype.constructor=Car;
+    var c= new Cat("A002","Cat");
 
 
-    var v= new Vehicle("Toyota",2019);
-    var c= new Car("Benz",2021);
-    c.park(); //'Benz-2021 is going to park'
+    Cat.prototype=Object.create(Animal.prototype);
+    Cat.prototype.constructor=Cat;
+
+
+    var c2= new Cat("A003","Cat 2");
+
+
+
+
 
 
 
