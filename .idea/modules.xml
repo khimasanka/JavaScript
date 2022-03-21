@@ -12,6 +12,7 @@
       <module fileurl="file://$PROJECT_DIR$/08_JS_Timers/08_JS_Timers.iml" filepath="$PROJECT_DIR$/08_JS_Timers/08_JS_Timers.iml" />
       <module fileurl="file://$PROJECT_DIR$/09_JQuery_UI/09_JQuery_UI.iml" filepath="$PROJECT_DIR$/09_JQuery_UI/09_JQuery_UI.iml" />
       <module fileurl="file://$PROJECT_DIR$/10_JQuery_Plugins/10_JQuery_Plugins.iml" filepath="$PROJECT_DIR$/10_JQuery_Plugins/10_JQuery_Plugins.iml" />
+      <module fileurl="file://$PROJECT_DIR$/11_WindowVSDocument/11_WindowVSDocument.iml" filepath="$PROJECT_DIR$/11_WindowVSDocument/11_WindowVSDocument.iml" />
     </modules>
   </component>
 </project>
