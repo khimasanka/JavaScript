@@ -1068,7 +1068,7 @@
     // customer2.id
 
 
-    function Vehicle(model, year) {
+    /*function Vehicle(model, year) {
         this.model = model;
         this.year = year;
         this.park = function () {
@@ -1087,6 +1087,33 @@
 
     var c= new Car("Toyota",2019);
     c.park();
+*/
+
+    function Vehicle(model, year) {
+        this.model = model;
+        this.year = year;
+        this.park = function () {
+            return this.model + "-" + this.year + " is going to park";
+        }
+    }
+
+    function Car(model,year){
+
+    }
+
+    Car.prototype=Vehicle.prototype;
+
+    var c= new Car("Toyota",2019);
+    var v= new Vehicle("Benz",2020);
+
+
+
+
+
+
+
+
+
 
 
 </script>
