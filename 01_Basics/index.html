@@ -1145,29 +1145,58 @@
 
 
 
-    // Inheritance Case 2
-    function Animal(id,name){
-        this.id=id;
-        this.name=name;
-        this.cry=function (){
-            return "The "+this.name+"-"+this.id+" is Crying";
+    // // Inheritance Case 2
+    // function Animal(id,name){
+    //     this.id=id;
+    //     this.name=name;
+    //     this.cry=function (){
+    //         return "The "+this.name+"-"+this.id+" is Crying";
+    //     }
+    // }
+    //
+    // var a= new Animal("A001","Dog");
+    //
+    // function Cat(id,name){
+    //     Animal.apply(this,arguments);
+    // }
+    //
+    // var c= new Cat("A002","Cat");
+    //
+    //
+    // Cat.prototype=Object.create(Animal.prototype);
+    // Cat.prototype.constructor=Cat;
+    //
+    //
+    // var c2= new Cat("A003","Cat 2");
+
+
+
+    //How to make the above case using class keyword
+    //Introduced in ES6(2015)
+
+    class Vehicle{
+        constructor(id,name) {
+            this.id=id;
+            this.name=name;
+        }
+        park(){
+            return this.name+" - "+this.id+" is going to park";
         }
     }
 
-    var a= new Animal("A001","Dog");
-
-    function Cat(id,name){
-        Animal.apply(this,arguments);
+    class Car extends Vehicle{
+        constructor(id,name) {
+            super(id,name);
+        }
     }
 
-    var c= new Cat("A002","Cat");
 
+    var c= new Car("C001","Toyota");
+    c.park();
 
-    Cat.prototype=Object.create(Animal.prototype);
-    Cat.prototype.constructor=Cat;
+    var v= new Vehicle("V001","Benz");
+    v.park();
 
-
-    var c2= new Cat("A003","Cat 2");
 
 
 
