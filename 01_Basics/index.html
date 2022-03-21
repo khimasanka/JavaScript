@@ -1089,7 +1089,7 @@
     c.park();
 */
 
-    function Vehicle(model, year) {
+  /*  function Vehicle(model, year) {
         this.model = model;
         this.year = year;
         this.park = function () {
@@ -1112,10 +1112,31 @@
 
     c.testVehicle;
     c.testVehicle;
-    v.testVehicle;
     v.testCar;
+    v.testVehicle;
+*/
 
 
+
+    // Solution for Inheritance Problem
+    function Vehicle(model,year){
+        this.model=model;
+        this.year=year;
+        this.park=function (){
+            return this.model+"-"+this.year+" is going to park";
+        }
+    }
+
+
+    function Car(model,year){
+
+    }
+
+    Car.prototype=Object.create(Vehicle.prototype);//create an empty object referring to the Vehicle prototype
+    Car.prototype.constructor=Car;
+
+    var v= new Vehicle();
+    var c= new Car();
 
 
 
