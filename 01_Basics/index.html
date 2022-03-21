@@ -1129,14 +1129,18 @@
 
 
     function Car(model,year){
-
+        Vehicle.apply(this,arguments);
     }
+
 
     Car.prototype=Object.create(Vehicle.prototype);//create an empty object referring to the Vehicle prototype
     Car.prototype.constructor=Car;
 
-    var v= new Vehicle();
-    var c= new Car();
+
+    var v= new Vehicle("Toyota",2019);
+    var c= new Car("Benz",2021);
+    c.park(); //'Benz-2021 is going to park'
+
 
 
 
