@@ -1103,8 +1103,17 @@
 
     Car.prototype=Vehicle.prototype;
 
-    var c= new Car("Toyota",2019);
-    var v= new Vehicle("Benz",2020);
+    Vehicle.prototype.testVehicle=100;
+    Car.prototype.testCar=200;
+
+    var c= new Car("Toyota",2019); // under the Vehicle Prototype
+    var v= new Vehicle("Benz",2020); // under the vehicle Prototype
+
+
+    c.testVehicle;
+    c.testVehicle;
+    v.testVehicle;
+    v.testCar;
 
 
 
