@@ -19,9 +19,20 @@
 
 $("#btn").click(function (){
 
+    console.log("Request Started")
     var http=new XMLHttpRequest();
-    http.open("GET","index.html");
+    console.log(http.status,"After the XMLHttpRequest Object Created"); //
+
+    http.open("GET","db/db.txt");
+    console.log(http.status,"After the Open Method invoked"); //
+
+    console.log(http.responseText);
+    console.log(http.status,"After the Response Text Printed"); //
+
     http.send();
+    console.log(http.status,"After the Send Method is Invoked"); //
+
+    console.log("Request Finished")
 
 });
 </script>
