@@ -32,6 +32,12 @@ $("#btn").click(function (){
     http.send();
     console.log(http.readyState,"After the Send Method is Invoked"); //
 
+    //when the requests status are changed..please run this
+    http.onreadystatechange=function(){
+        console.log(http.readyState,"Inside On Ready State Change Event"); //
+        console.log(http.responseText);
+    }
+
     console.log("Request Finished");
 
 });
