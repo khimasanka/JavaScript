@@ -18,6 +18,12 @@
 <script>
 
 $("#btn").click(function (){
+    //Ready Status of AJAX requests
+    //0 - Uninitialized
+    //1 - Loading
+    //2 - Loaded
+    //3 - Interactive
+    //4 - Completed
 
     console.log("Request Started")
     var http=new XMLHttpRequest();
