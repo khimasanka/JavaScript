@@ -21,20 +21,20 @@ $("#btn").click(function (){
 
     console.log("Request Started")
     var http=new XMLHttpRequest();
-    console.log(http.readyState,"After the XMLHttpRequest Object Created"); //
+    console.log(http.readyState,"After the XMLHttpRequest Object Created"); // Uninitialized
 
     http.open("GET","db/db.txt");
-    console.log(http.readyState,"After the Open Method invoked"); //
+    console.log(http.readyState,"After the Open Method invoked"); // Loading
 
     console.log(http.responseText);
-    console.log(http.readyState,"After the Response Text Printed"); //
+    console.log(http.readyState,"After the Response Text Printed"); // Loading
 
     http.send();
-    console.log(http.readyState,"After the Send Method is Invoked"); //
+    console.log(http.readyState,"After the Send Method is Invoked"); // Loading
 
     //when the requests status are changed..please run this
     http.onreadystatechange=function(){
-        console.log(http.readyState,"Inside On Ready State Change Event"); //
+        console.log(http.readyState,"Inside On Ready State Change Event"); //Loaded, //Interactive //Completed
         console.log(http.responseText);
     }
 
