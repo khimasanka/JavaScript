@@ -15,7 +15,7 @@
 </section>
 <section class="container mt-3">
 
-<!--    File Type : TXT-->
+    <!--    File Type : TXT-->
     <div class="row">
         <div class="col-2">
             <button class="btn btn-danger" id="btn1">Send Request To File</button>
@@ -33,23 +33,22 @@
             <button class="btn btn-danger" id="btn2">Send Request To XML</button>
         </div>
         <div class="col">
-          <table class="table table-bordered table-hover">
-              <thead class="bg-danger text-white">
-              <tr>
-                  <th>Customer ID</th>
-                  <th>Name</th>
-                  <th>Address</th>
-                  <th>Salary</th>
-              </tr>
-              </thead>
-              <tbody id="tblCustomer">
+            <table class="table table-bordered table-hover">
+                <thead class="bg-danger text-white">
+                <tr>
+                    <th>Customer ID</th>
+                    <th>Name</th>
+                    <th>Address</th>
+                    <th>Salary</th>
+                </tr>
+                </thead>
+                <tbody id="tblCustomer">
 
-              </tbody>
-          </table>
+                </tbody>
+            </table>
         </div>
     </div>
 </section>
-
 
 
 <script src="assets/jQuery/jquery-3.6.0.min.js"></script>
@@ -76,10 +75,31 @@
 
 
     $("#btn2").click(function () {
+        $("#tblCustomer").empty();
         $.ajax({
             url: "db/db.xml",
             success: function (resp) {
-                console.log(resp);
+                console.log(resp); //print the xml object
+
+                //now convert it to the jQuery Object
+                let ob = $(resp);
+                console.log(ob.children().children()); // get the customer count
+
+                // run a for loop to the customer count
+                for (let i = 0; i < ob.children().children().length; i++) {
+                    let id = ob.children().children().eq(i).find("id").text();
+                    let name = ob.children().children().eq(i).find("name").text();
+                    let address = ob.children().children().eq(i).find("address").text();
+                    let salary = ob.children().children().eq(i).find("salary").text();
+
+                    console.log(id,name,address,salary);
+
+                    // create a table row and set values
+                    let row=`<tr><td>${id}</td><td>${name}</td><td>${address}</td><td>${salary}</td></tr>`;
+                    $("#tblCustomer").append(row);
+                }
+
+
             },
             error: function (xhr) {
                 console.log(xhr);

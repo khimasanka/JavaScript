@@ -17,4 +17,16 @@
         <address>Kaluthara</address>
         <salary>3000.00</salary>
     </customer>
+    <customer>
+        <id>C004</id>
+        <name>Kamal</name>
+        <address>Galle</address>
+        <salary>4000.00</salary>
+    </customer>
+    <customer>
+        <id>C005</id>
+        <name>Kamindu</name>
+        <address>Pandura</address>
+        <salary>5000.00</salary>
+    </customer>
 </customers>
