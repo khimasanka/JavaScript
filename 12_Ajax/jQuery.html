@@ -10,6 +10,7 @@
 </head>
 <body>
 <h1>Hello Ajax..!</h1>
+<p id="display"></p>
 <button id="btn">Send Request</button>
 
 
@@ -23,7 +24,7 @@
             url:"db/db.txt",
             // async:false, // default = true (async) // false = sync (blocking)
             success:function(resp){
-                console.log(resp);
+               $("#display").text(resp);
             },
             error:function(xhr){
                 console.log(xhr);
