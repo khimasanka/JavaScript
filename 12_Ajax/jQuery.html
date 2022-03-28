@@ -81,12 +81,13 @@
             success: function (resp) {
                 console.log(resp); //print the xml object
 
-                //now convert it to the jQuery Object
+                //Now convert it to the jQuery Object
                 let ob = $(resp);
                 console.log(ob.children().children()); // get the customer count
 
-                // run a for loop to the customer count
+                // Run a for loop to the customer count and Browse and Print Customer Records to the table
                 for (let i = 0; i < ob.children().children().length; i++) {
+
                     let id = ob.children().children().eq(i).find("id").text();
                     let name = ob.children().children().eq(i).find("name").text();
                     let address = ob.children().children().eq(i).find("address").text();
@@ -98,7 +99,6 @@
                     let row=`<tr><td>${id}</td><td>${name}</td><td>${address}</td><td>${salary}</td></tr>`;
                     $("#tblCustomer").append(row);
                 }
-
 
             },
             error: function (xhr) {
