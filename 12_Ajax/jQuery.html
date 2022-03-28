@@ -16,10 +16,19 @@
 <script src="assets/jQuery/jquery-3.6.0.min.js"></script>
 <script>
     $("#btn").click(function (){
+
         console.log("Started");
 
         $.ajax({
             url:"db/db.txt",
+            // async:false, // default = true (async) // false = sync (blocking)
+            success:function(resp){
+                console.log(resp);
+            },
+            error:function(xhr){
+                console.log(xhr);
+            }
+
         });
 
         console.log("Ended");
