@@ -52,18 +52,20 @@
 
 
 $("#btn").click(function (){
+    console.log("Started");
     var http= new XMLHttpRequest();
     http.open("GET","db/db.txt");
     http.send();
     http.onreadystatechange=function(){
         http.readyState; //XMLHttpRequest Object == 4
-        http.status // server // server response is ok = 200
+        http.status; // server // server response is ok = 200
         if (http.readyState==4 && http.status==200){ // Server Response is ok and Request processing completed
             $("#display").text(http.responseText);
         }
     }
-});
+    console.log("Ended");
 
+});
 
 
 
