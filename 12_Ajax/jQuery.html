@@ -141,6 +141,7 @@
 
     $("#btn3").click(function () {
         $("#tblCustomerJson").empty();
+
         $.ajax({
             url: "db/db.json",
             success: function (resp) {
