@@ -43,12 +43,12 @@
                 </tr>
                 </thead>
                 <tbody id="tblCustomer">
-                    <tr>
-                        <td> </td>
-                        <td> </td>
-                        <td> </td>
-                        <td> </td>
-                    </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
                 </tbody>
             </table>
         </div>
@@ -71,10 +71,10 @@
                 </thead>
                 <tbody id="tblCustomerJson">
                 <tr>
-                    <td> </td>
-                    <td> </td>
-                    <td> </td>
-                    <td> </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                 </tr>
                 </tbody>
             </table>
@@ -125,16 +125,38 @@
                     let address = ob.children().children().eq(i).find("address").text();
                     let salary = ob.children().children().eq(i).find("salary").text();
 
-                    console.log(id,name,address,salary);
+                    console.log(id, name, address, salary);
 
                     // create a table row and set values
-                    let row=`<tr><td>${id}</td><td>${name}</td><td>${address}</td><td>${salary}</td></tr>`;
+                    let row = `<tr><td>${id}</td><td>${name}</td><td>${address}</td><td>${salary}</td></tr>`;
                     $("#tblCustomer").append(row);
                 }
 
             },
             error: function (xhr) {
                 console.log(xhr);
+            }
+        });
+    });
+
+    $("#btn3").click(function () {
+        $("#tblCustomerJson").empty();
+        $.ajax({
+            url: "db/db.json",
+            success: function (resp) {
+                // resp;//customer objects' array reference
+
+                for (var i in resp) {
+                    var id = resp[i].id;
+                    var name = resp[i].name;
+                    var address = resp[i].address;
+                    var salary = resp[i].salary;
+                    // console.log(id, name, address, salary);
+
+                    //add to the table
+                    var row = `<tr><td>${id}</td><td>${name}</td><td>${address}</td><td>${salary}</td></tr>`;
+                    $("#tblCustomerJson").append(row);
+                }
             }
         });
     });
